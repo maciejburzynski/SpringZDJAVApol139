@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Dog {
-
+//POJO - Plain Old Java Object -> Model class
     @Id
     Long id;
     String name;
