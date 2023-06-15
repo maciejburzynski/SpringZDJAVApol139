@@ -1,6 +1,7 @@
 package pl.sda.ZDJAVApol139.dog;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,9 +17,11 @@ public class DogRestController {
     private final DogService dogService;
 
     @GetMapping(path = "/api/dogs")
-//    @RequestMapping(path = "/api/dogs", method = GET)
-    public List findAllDogs() {
-        return dogService.findAllDogs();
+    public ResponseEntity<List<Dog>> findAllDogs() {
+        return ResponseEntity
+                .status(200)
+                .header("group-name","ZDJAVApol139")
+                .body(dogService.findAllDogs());
     }
 
     @PostMapping(path = "/api/dogs")
@@ -26,7 +29,7 @@ public class DogRestController {
         dogService.addDog(dog);
     }
 
-    @PostMapping(path = "/api/dogs")
+    @PostMapping(path = "/api/dogs/set")
     public void addDogs(@RequestBody Set<Dog> dogs) {
         dogService.addDogs(dogs);
     }
