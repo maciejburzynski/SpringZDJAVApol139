@@ -29,4 +29,12 @@ public class DogService {
     public void addDogs(Set<Dog> dogs) {
         dogRepository.addDogs(dogs);
     }
+
+    public Dog findDogById(Long id) {
+        return dogRepository
+                .findDogById(id)
+                .orElseThrow(
+                        () -> new DogNotFoundException("Dog with this id: " + id + " doesn't exist"));
+    }
+
 }

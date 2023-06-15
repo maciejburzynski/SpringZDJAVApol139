@@ -1,10 +1,10 @@
 package pl.sda.ZDJAVApol139.dog;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Repository
@@ -24,4 +24,10 @@ public class DogRepository {
     public void addDogs(Set<Dog> dogs) {
         iDogRepository.saveAll(dogs);
     }
+
+    public Optional<Dog> findDogById(Long id) {
+        return iDogRepository.findById(id);
+    }
+
+
 }
