@@ -33,8 +33,8 @@ public class DogService {
     public Dog findDogById(Long id) {
         return dogRepository
                 .findDogById(id)
-                .orElseThrow(
-                        () -> new DogNotFoundException("Dog with this id: " + id + " doesn't exist"));
+                .orElseThrow(() ->
+                        new DogNotFoundException("Dog with this id: " + id + " doesn't exist"));
     }
 
 }
