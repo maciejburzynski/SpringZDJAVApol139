@@ -55,21 +55,19 @@ public class DogRestController {
     //Exception handling in REST api:
     //        -try/catch
     //        -global exception handler
+
+
+
+
+
     @GetMapping("/api/dogs/{id}")
     public ResponseEntity findDogById(@PathVariable Long id) {
         log.info("Trying to get dog with id: " + id);
-        try {
-            return ResponseEntity
-                    .status(200)
-                    .body(dogService.findDogById(id));
-        } catch (DogNotFoundException dogNotFoundException) {
-            log.error("Unable to find a dog with id: " + id);
-            System.out.println("Unable to find a dog with id: " + id);
-            return ResponseEntity
-                    .status(404)
-                    .body(dogNotFoundException.getMessage());
-        }
+        return ResponseEntity
+                .status(200)
+                .body(dogService.findDogById(id));
     }
-
-
 }
+
+
+
