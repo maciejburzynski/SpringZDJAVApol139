@@ -32,10 +32,10 @@ public class DataInitializer {
     }
 
     void addDogs() {
-        Dog dog = new Dog("Max");
-        Dog dog1 = new Dog("Szrik");
-        Dog dog2 = new Dog("Andrzej");
-        Dog dog3 = new Dog("Reksio");
+        Dog dog = new Dog("Max", 100.00);
+        Dog dog1 = new Dog("Szrik", 150.00);
+        Dog dog2 = new Dog("Andrzej",120.00);
+        Dog dog3 = new Dog("Reksio", 2500.00);
 
         dogService.addDog(dog);
         dogService.addDog(dog1);

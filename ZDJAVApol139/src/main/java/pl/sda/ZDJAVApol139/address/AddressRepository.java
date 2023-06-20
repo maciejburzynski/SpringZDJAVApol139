@@ -11,16 +11,18 @@ import static java.util.stream.Collectors.*;
 
 @Repository
 @RequiredArgsConstructor
-public class AddressRepository {
+public class AddressRepository{ //inheritance - dziedziczenie: AddressRepository extends IAddressRepository
 
-    private final IAddressRepository iAddressRepository;
+    private final IAddressRepository iAddressRepository; // co
 
     public Set<Address> findAllAddresses() {
         return StreamSupport.stream(
                         iAddressRepository.findAll().spliterator(), false)
                 .collect(toSet());
     }
-
+// HashSet - class - implementation
+// Set - interface -
+//    Composition over inheritance
     public void addAddress(Address address) {
         iAddressRepository.save(address);
     }

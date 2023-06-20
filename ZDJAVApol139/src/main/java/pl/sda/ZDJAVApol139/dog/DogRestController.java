@@ -16,7 +16,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 @Slf4j
 public class DogRestController {
-//    RestController -> Service -> Repository -> IRepository
+//    RestController -> Service -> Repository -> IRepository extends JPA/CRUDRepository
 
     private final DogService dogService;
 

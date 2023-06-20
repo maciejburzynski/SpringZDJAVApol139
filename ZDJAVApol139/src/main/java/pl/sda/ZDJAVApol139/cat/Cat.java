@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Data
@@ -13,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "CATS")
 public class Cat {
-
+//JAVA -> Cat / DB -> CAT
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;

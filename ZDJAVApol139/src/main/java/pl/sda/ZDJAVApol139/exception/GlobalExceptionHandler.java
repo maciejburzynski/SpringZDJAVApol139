@@ -17,5 +17,4 @@ public class GlobalExceptionHandler {
     String dogNotFoundExceptionHandler(DogNotFoundException exception) {
         return exception.getMessage();
     }
-
 }

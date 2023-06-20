@@ -17,8 +17,10 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
+    Double price;
 
-    public Dog(String name) {
+    public Dog(String name, Double price) {
         this.name = name;
+        this.price = price;
     }
 }
