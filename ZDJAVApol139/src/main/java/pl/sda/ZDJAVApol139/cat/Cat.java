@@ -17,6 +17,7 @@ public class Cat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
+    Double price;
 
     public Cat(String name) {
         this.name = name;
