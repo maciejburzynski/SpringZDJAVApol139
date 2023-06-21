@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Data
 @ConfigurationProperties(prefix = "zdjava139.custom-properties")
 public class CustomConfiguration {
-
     String communicate;
 
 }

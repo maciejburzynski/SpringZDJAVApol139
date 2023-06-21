@@ -1,5 +1,6 @@
 package pl.sda.ZDJAVApol139.helloworld;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +13,6 @@ public class HelloRestController {
 
     private final CustomConfiguration customConfiguration;
 
-
-    private String injectedValueWithoutDefault;
     @GetMapping("/api/hello-world")
     public String helloWorld() {
         return "Hello World";
