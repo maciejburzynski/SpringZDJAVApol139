@@ -67,6 +67,17 @@ public class DogRestController {
                 .status(200)
                 .body(dogService.findDogById(id));
     }
+
+//    PUT - Resource update
+//    PATCH - Part of resource update
+
+    @PutMapping("api/dogs/{id}")
+    public ResponseEntity updateDogById(@PathVariable Long id,@RequestBody Dog dog){
+        dogService.updateDogById(id, dog);
+        return ResponseEntity.status(204).build();
+    }
+
+
 }
 
 

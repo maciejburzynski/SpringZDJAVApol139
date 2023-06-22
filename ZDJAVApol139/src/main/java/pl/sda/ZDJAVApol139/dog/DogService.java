@@ -37,4 +37,7 @@ public class DogService {
                         new DogNotFoundException("Dog with this id: " + id + " doesn't exist"));
     }
 
+    public void updateDogById(Long id, Dog dog) {
+        dogRepository.updateDog(id, dog.getName(), dog.getPrice());
+    }
 }

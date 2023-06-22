@@ -3,6 +3,7 @@ package pl.sda.ZDJAVApol139.dog;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -17,9 +18,9 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    Double price;
+    BigDecimal price;
 
-    public Dog(String name, Double price) {
+    public Dog(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
     }

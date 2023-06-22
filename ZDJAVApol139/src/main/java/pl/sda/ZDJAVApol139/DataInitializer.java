@@ -12,6 +12,7 @@ import pl.sda.ZDJAVApol139.dog.Dog;
 import pl.sda.ZDJAVApol139.dog.DogService;
 
 import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
 import java.util.Set;
 
 import static java.util.Set.*;
@@ -32,10 +33,10 @@ public class DataInitializer {
     }
 
     void addDogs() {
-        Dog dog = new Dog("Max", 100.00);
-        Dog dog1 = new Dog("Szrik", 150.00);
-        Dog dog2 = new Dog("Andrzej",120.00);
-        Dog dog3 = new Dog("Reksio", 2500.00);
+        Dog dog = new Dog("Max", BigDecimal.valueOf(100.00));
+        Dog dog1 = new Dog("Szrik", BigDecimal.valueOf(150.00));
+        Dog dog2 = new Dog("Andrzej", BigDecimal.valueOf(120.00));
+        Dog dog3 = new Dog("Reksio",BigDecimal.valueOf(2500.0));
 
         dogService.addDog(dog);
         dogService.addDog(dog1);

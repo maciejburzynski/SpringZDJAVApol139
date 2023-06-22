@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -17,7 +18,7 @@ public class Cat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    Double price;
+    BigDecimal price;
 
     public Cat(String name) {
         this.name = name;

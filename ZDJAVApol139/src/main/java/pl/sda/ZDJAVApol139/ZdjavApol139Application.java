@@ -10,7 +10,4 @@ public class ZdjavApol139Application {
 		SpringApplication.run(ZdjavApol139Application.class, args);
 	}
 
-
-
-
 }

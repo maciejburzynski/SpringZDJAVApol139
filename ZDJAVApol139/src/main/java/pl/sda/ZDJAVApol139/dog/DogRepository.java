@@ -3,6 +3,7 @@ package pl.sda.ZDJAVApol139.dog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -30,4 +31,7 @@ public class DogRepository {
     }
 
 
+    public void updateDog(Long id, String name, BigDecimal price) {
+        iDogRepository.updateDog(id, name, price);
+    }
 }
