@@ -1,5 +1,3 @@
-package pl.sda.ZDJAVApol139;
-
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

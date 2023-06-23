@@ -16,7 +16,7 @@ public interface IDogRepository extends JpaRepository<Dog, Long> {
 
 
     @Modifying
-    @Query(value = "UPDATE DOGS SET name = :name, price = :price WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE Dog SET name = :name, price = :price WHERE id = :id")
     @Transactional// All or nothing
     void updateDog(@Param("id") Long id,
                    @Param("name") String name,

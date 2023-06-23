@@ -15,12 +15,14 @@ import java.util.Set;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
+// /api
 public class DogRestController {
 //    RestController -> Service -> Repository -> IRepository extends JPA/CRUDRepository
 
     private final DogService dogService;
 
     @GetMapping(path = "/api/dogs")
+//    /dogs
     public ResponseEntity<List<Dog>> findAllDogs(HttpServletRequest httpServletRequest) {
         String customHeader = httpServletRequest.getHeader("hello-world");
         log.info("Custom header value is : " + customHeader);
