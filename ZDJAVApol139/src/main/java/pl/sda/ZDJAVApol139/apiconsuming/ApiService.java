@@ -1,5 +1,6 @@
 package pl.sda.ZDJAVApol139.apiconsuming;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.net.http.HttpResponse;
 
 @Service
 @Slf4j
-public class apiService {
+public class ApiService {
 
 
     @PostConstruct
@@ -28,7 +29,24 @@ public class apiService {
                 .build();
         HttpResponse httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
 
-        log.info("My first api consuming + " + httpResponse.body());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        JokeResponse jokeResponse = objectMapper
+                .readValue(httpResponse
+                                .body()
+                                .toString(), JokeResponse.class);
+
+
+        log.info("My first api consuming joke = " + jokeResponse.getSetup());
+        log.info("...............");
+        log.info("...............");
+        log.info("...............");
+        log.info("...............");
+        log.info("...............");
+        log.info("...............");
+        log.info("...............");
+        log.info("My first api consuming punchline = " + jokeResponse.getPunchline());
 
     }
 }
