@@ -2,6 +2,7 @@ package pl.sda.ZDJAVApol139.dog;
 
 import lombok.*;
 import pl.sda.ZDJAVApol139.address.Address;
+import pl.sda.ZDJAVApol139.shelter.Shelter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -22,13 +23,16 @@ public class Dog {
     @Column(name = "PRICE_IN_PLN")
     BigDecimal price;
     @Enumerated(EnumType.STRING)
-    DogBreed dogRace;
+    DogBreed dogBreed;
+//    @Transient
     String photoUrl;
+//    @ManyToOne() if bi-directional + mappedBy = owner_of_relation
+//    Shelter shelter;
 
-    public Dog(String name, BigDecimal price, DogBreed dogRace, String photoUrl) {
+    public Dog(String name, BigDecimal price, DogBreed dogBreed, String photoUrl) {
         this.name = name;
         this.price = price;
-        this.dogRace = dogRace;
+        this.dogBreed = dogBreed;
         this.photoUrl = photoUrl;
     }
 }

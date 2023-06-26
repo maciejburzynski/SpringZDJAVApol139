@@ -33,4 +33,10 @@ public class Shelter {
         this.dogs = dogs;
         this.address = address;
     }
+
+    /*
+    bi-direct -> shelter.getDogs -> dog.getShelter
+    single-direct -> shelter.getDogs -no->dog.getShelter
+     */
+
 }
