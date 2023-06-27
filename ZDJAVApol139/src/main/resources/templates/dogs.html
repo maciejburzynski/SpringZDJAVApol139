@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,28 @@
 <body>
 <h1>Eluwina from ZDJavaPL139 </h1>
 <p>Hello Dogs from Thymeleaf</p>
-<img src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg?w=996&t=st=1687287351~exp=1687287951~hmac=9cbefe71dc4a92b0868489da3d1644fb51e35d7f3d0c112c25f3d26e030c2739" alt="Dog" width="600" height="400">
+<table>
+    <thead>
+    <tr>
+        <th>Dog id:</th>
+        <th>Dog name:</th>
+        <th>Dog price:</th>
+        <th>Dog breed:</th>
+        <th>Dog image:</th>
+    </tr>
+    </thead>
 
+    <tbody>
+    <tr th:each="dog: ${dogs}">
+        <td th:text="${dog.getId}"></td>
+        <td th:text="${dog.getName}"></td>
+        <td th:text="${dog.getDogBreed}"></td>
+        <td th:text="${dog.getPrice}"></td>
+        <td><img th:src="${dog.getPhotoUrl}" width="300"/></td>
+    </tr>
+    </tbody>
+
+
+</table>
 </body>
 </html>
