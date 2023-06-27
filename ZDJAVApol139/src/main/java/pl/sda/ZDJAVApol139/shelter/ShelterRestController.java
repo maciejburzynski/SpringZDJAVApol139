@@ -32,9 +32,8 @@ public class ShelterRestController {
 
     private final ShelterService shelterService;
 
-
     @PostMapping("/api/shelters")
-    public ResponseEntity addShelter(Shelter shelter){
+    public ResponseEntity addShelter(Shelter shelter) {
         shelterService.addShelter(shelter);
         return ResponseEntity
                 .status(201)
@@ -42,7 +41,7 @@ public class ShelterRestController {
     }
 
     @GetMapping("/api/shelters")
-    public ResponseEntity<List<Shelter>> findAllShelters(){
+    public ResponseEntity<List<Shelter>> findAllShelters() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(shelterService.getAllShelters());

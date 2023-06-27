@@ -12,7 +12,9 @@ import pl.sda.ZDJAVApol139.dog.Dog;
 import pl.sda.ZDJAVApol139.dog.DogBreed;
 import pl.sda.ZDJAVApol139.dog.DogService;
 import pl.sda.ZDJAVApol139.shelter.Shelter;
+import pl.sda.ZDJAVApol139.shelter.ShelterRepository;
 import pl.sda.ZDJAVApol139.shelter.ShelterService;
+import pl.sda.ZDJAVApol139.utils.ShelterUtils;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
@@ -21,6 +23,7 @@ import java.util.Set;
 
 import static java.util.Set.*;
 import static pl.sda.ZDJAVApol139.dog.DogBreed.*;
+import static pl.sda.ZDJAVApol139.utils.ShelterUtils.*;
 
 @Component
 @RequiredArgsConstructor
@@ -34,6 +37,7 @@ public class DataInitializer {
     @PostConstruct
     void addData() {
         addShelters();
+
     }
 
     void addShelters() {
@@ -54,6 +58,9 @@ public class DataInitializer {
         shelterService.addShelter(shelter);
         shelterService.addShelter(shelter1);
 
+
+//        Dog dog3 = EXAMPLE_VALID_DOG;
+        // unable to create new instance of ShelterUtils because of private constructor
     }
 
 //    void addDogs() {

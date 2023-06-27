@@ -17,9 +17,7 @@ import java.net.http.HttpResponse;
 public class ApiService {
 
 
-    @PostConstruct
-    public void callApi() throws IOException, InterruptedException {
-
+    public JokeResponse callApi() throws IOException, InterruptedException {
         HttpClient httpClient = HttpClient
                 .newHttpClient();
         HttpRequest httpRequest = HttpRequest
@@ -29,24 +27,9 @@ public class ApiService {
                 .build();
         HttpResponse httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
 
-
         ObjectMapper objectMapper = new ObjectMapper();
+        log.info("My first api consuming = " + httpResponse.body().toString());
 
-        JokeResponse jokeResponse = objectMapper
-                .readValue(httpResponse
-                                .body()
-                                .toString(), JokeResponse.class);
-
-
-        log.info("My first api consuming joke = " + jokeResponse.getSetup());
-        log.info("...............");
-        log.info("...............");
-        log.info("...............");
-        log.info("...............");
-        log.info("...............");
-        log.info("...............");
-        log.info("...............");
-        log.info("My first api consuming punchline = " + jokeResponse.getPunchline());
-
+        return objectMapper.readValue(httpResponse.body().toString(), JokeResponse.class);
     }
 }

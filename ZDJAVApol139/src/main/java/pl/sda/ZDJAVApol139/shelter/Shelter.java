@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Shelter {
+public class Shelter { //
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
