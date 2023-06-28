@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link th:href="@{/styles.css}" rel="stylesheet" />
     <title>Dooooooogs</title>
 </head>
 <body>
 <h1>Eluwina from ZDJavaPL139 </h1>
 <p>Hello Dogs from Thymeleaf</p>
+<p>
 <table>
     <thead>
     <tr>
@@ -28,8 +29,7 @@
         <td><img th:src="${dog.getPhotoUrl}" width="300"/></td>
     </tr>
     </tbody>
-
-
 </table>
+</p>
 </body>
 </html>

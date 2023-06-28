@@ -16,4 +16,9 @@ public class DogViewController {
         model.addAttribute("dogs", dogService.findAllDogs());
         return "dogs";
     }
+
+    @GetMapping(path = "/index")
+    public String getDogs() {
+        return "index";
+    }
 }

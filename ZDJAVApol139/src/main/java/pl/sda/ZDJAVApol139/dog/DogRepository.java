@@ -30,7 +30,6 @@ public class DogRepository {
         return iDogRepository.findById(id);
     }
 
-
     public void updateDog(Long id, String name, BigDecimal price) {
         iDogRepository.updateDog(id, name, price);
     }
