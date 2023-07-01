@@ -3,6 +3,9 @@ package pl.sda.ZDJAVApol139.dog;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -34,6 +37,7 @@ public class DogRestController {
                 .body(dogService.findAllDogs());
     }
 
+//    @Secured(value = "ROLE_USER")
     @PostMapping(path = "/api/dogs")
     public ResponseEntity addDog(@RequestBody Dog dog,
                                  HttpServletResponse httpServletResponse) {

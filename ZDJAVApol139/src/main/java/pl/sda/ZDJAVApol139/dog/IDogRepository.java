@@ -14,6 +14,7 @@ public interface IDogRepository extends JpaRepository<Dog, Long> {
 //Custom JPA paramiterized queries
 //    Optional<Dog> updateDogById(Long id);
 
+    Optional<Dog> findByPhotoUrlContains(String domain);
 
     @Modifying
     @Query(value = "UPDATE Dog SET name = :name, price = :price WHERE id = :id")
