@@ -19,7 +19,7 @@ public class Cat {
     Long id;
     String name;
     BigDecimal price;
-
+//JPA -> Java Persistence API -> Hibernate implementation of JPA
     public Cat(String name) {
         this.name = name;
     }

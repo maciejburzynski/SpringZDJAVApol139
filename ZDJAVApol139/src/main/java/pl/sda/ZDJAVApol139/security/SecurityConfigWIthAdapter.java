@@ -11,12 +11,12 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfigWIthAdapter {
+public class SecurityConfigWIthAdapter{
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().antMatchers("/api/dogs").hasAnyRole();
-        httpSecurity.authorizeRequests().antMatchers("/*").permitAll();
+//        httpSecurity.authorizeRequests().antMatchers("/api/dogs").hasAnyRole();
+        httpSecurity.authorizeRequests().antMatchers("/**").permitAll();
 
 
         return httpSecurity.build();

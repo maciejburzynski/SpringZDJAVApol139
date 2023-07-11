@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 @Component
 //@Scope("prototype") OR @Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class DependencyInjectionService {
+//  per HTTP Request
+//  per WebSocketowe
+//  per App
 
 //    DI by field
 //    @Autowired // Default - singleton

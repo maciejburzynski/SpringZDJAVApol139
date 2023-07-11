@@ -2,6 +2,7 @@ package pl.sda.ZDJAVApol139.dog;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -45,6 +46,7 @@ public class DogRestController {
 
         Cookie cookie = new Cookie("group-name", "ZDJAVApol139");
         httpServletResponse.addCookie(cookie);
+        httpServletResponse.setHeader("eluwina", "byku");
         log.info("Adding dog: " + dog);
 
         return ResponseEntity

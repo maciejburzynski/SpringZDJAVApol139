@@ -5,7 +5,7 @@ import pl.sda.ZDJAVApol139.cat.Cat;
 public class EqualsHashCodeTest {
 
     @Test
-    void test(){
+    void equalsAndHashCodeTest(){
 
         Cat cat = new Cat("Andrzejek");
         Cat cat1 = new Cat("Andrzejek");

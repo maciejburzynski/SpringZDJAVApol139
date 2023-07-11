@@ -13,6 +13,9 @@ public class BigDecimalTest {
     static {
         System.out.println("i= " + i);
     }
+    static {
+        i = i++;
+    }
     @Test
     void test() {
 

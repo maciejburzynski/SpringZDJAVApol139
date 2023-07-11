@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @ToString
 public class JokeResponse {
-
+//POJO -> jokeResponse.getPunchline()
     String type;
     String setup;
     String punchline;

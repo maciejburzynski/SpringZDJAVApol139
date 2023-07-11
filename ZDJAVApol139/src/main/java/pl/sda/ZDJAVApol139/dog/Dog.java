@@ -23,12 +23,14 @@ public class Dog {
     @Column(name = "PRICE_IN_PLN")
     BigDecimal price;
     @Enumerated(EnumType.STRING)
-    DogBreed dogBreed;
+    DogBreed dogBreed; // -> DOG_BREED
 //    @Transient
     String photoUrl;
+//    @Embedded -> Not table, but columns consisting from fields of Object
+//    Address address -> zip-code, street, city
 //    @ManyToOne() if bi-directional + mappedBy = owner_of_relation
 //    Shelter shelter;
-
+// dog.getShelter -> SELECT * FROM DOGS WHERE shelter_id = some-value
     public Dog(String name, BigDecimal price, DogBreed dogBreed, String photoUrl) {
         this.name = name;
         this.price = price;
