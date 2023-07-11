@@ -33,11 +33,19 @@ class AddressServiceTest {
         Mockito.when(addressRepository.findAllAddresses()).thenReturn(expectedAddresses);
 
 //       when
-
         Set<Address> actualAddresses = addressService.findAllAddresses();
 
 //        then
         assertEquals(expectedAddresses, actualAddresses);
+    }
 
+    @Test
+    void shouldIterractWithRepositoryWhenAddNewAddressInService() {
+//        given
+        Address address = new Address(1L, "Pilsudzkiego", 10, "90-000", "Lodzkie", "Lodz");
+//       when
+        addressService.addAddress(address);
+//        then
+        Mockito.verify(addressRepository).addAddress(address);
     }
 }
