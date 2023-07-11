@@ -31,6 +31,7 @@ class AddressServiceTest {
         Set<Address> expectedAddresses = of(address, address1, address2);
 
         Mockito.when(addressRepository.findAllAddresses()).thenReturn(expectedAddresses);
+//        Mockito.when(addressRepository.findAllAddresses()).thenThrow(DogNotFoundExceptions.class);
 
 //       when
         Set<Address> actualAddresses = addressService.findAllAddresses();
@@ -47,5 +48,6 @@ class AddressServiceTest {
         addressService.addAddress(address);
 //        then
         Mockito.verify(addressRepository).addAddress(address);
+
     }
 }
