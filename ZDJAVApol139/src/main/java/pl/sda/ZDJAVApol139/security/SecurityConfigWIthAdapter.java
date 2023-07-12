@@ -9,13 +9,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class SecurityConfigWIthAdapter{
+public class SecurityConfigWIthAdapter {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-//        httpSecurity.authorizeRequests().antMatchers("/api/dogs").hasAnyRole();
         httpSecurity.authorizeRequests().antMatchers("/**").permitAll();
 
 
@@ -35,5 +37,17 @@ public class SecurityConfigWIthAdapter{
                 .roles("ADMIN")
                 .build();
         return new InMemoryUserDetailsManager(moderator, admin);
+    }
+
+    @Bean
+    public WebMvcConfigurer addCorsMappings() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedHeaders("*")
+                        .allowedOrigins("*");
+            }
+        };
     }
 }

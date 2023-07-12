@@ -41,7 +41,7 @@ class AddressServiceTest {
     }
 
     @Test
-    void shouldIterractWithRepositoryWhenAddNewAddressInService() {
+    void shouldInterractWithRepositoryWhenAddNewAddressInService() {
 //        given
         Address address = new Address(1L, "Pilsudzkiego", 10, "90-000", "Lodzkie", "Lodz");
 //       when

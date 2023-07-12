@@ -18,8 +18,6 @@ import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
-@Slf4j
-// /api
 public class DogRestController {
 //    RestController -> Service -> Repository -> IRepository extends JPA/CRUDRepository
 
@@ -29,8 +27,6 @@ public class DogRestController {
 //    /dogs
     public ResponseEntity<List<Dog>> findAllDogs(HttpServletRequest httpServletRequest) {
         String customHeader = httpServletRequest.getHeader("hello-world");
-        log.info("Custom header value is : " + customHeader);
-        log.info("Returning all dogs");
 
         return ResponseEntity
                 .status(200)
@@ -47,7 +43,6 @@ public class DogRestController {
         Cookie cookie = new Cookie("group-name", "ZDJAVApol139");
         httpServletResponse.addCookie(cookie);
         httpServletResponse.setHeader("eluwina", "byku");
-        log.info("Adding dog: " + dog);
 
         return ResponseEntity
                 .status(201)
@@ -56,7 +51,6 @@ public class DogRestController {
 
     @PostMapping(path = "/api/dogs/set")
     public void addDogs(@RequestBody Set<Dog> dogs) {
-        log.info("Adding dogs: " + dogs);
         dogService.addDogs(dogs);
     }
 
@@ -70,7 +64,6 @@ public class DogRestController {
 
     @GetMapping("/api/dogs/{id}")
     public ResponseEntity findDogById(@PathVariable Long id) {
-        log.info("Trying to get dog with id: " + id);
         return ResponseEntity
                 .status(200)
                 .body(dogService.findDogById(id));
